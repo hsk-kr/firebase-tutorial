@@ -1,0 +1,27 @@
+html,
+body {
+  margin: 0;
+}
+
+* {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+label,
+button,
+a {
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Cabin Condensed', sans-serif;
+}
