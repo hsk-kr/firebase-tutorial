@@ -1,0 +1,10 @@
+{
+  "packages": ["packages/*"],
+  "version": "independent",
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "lint": "lerna run lint --parallel",
+    "setup": "npm install && npm run bootstrap --hoist",
+    "start": "lerna run start --parallel"
+  }
+}
