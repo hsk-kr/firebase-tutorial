@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Label from './input/Label';
 import Inputbox from './input/Inputbox';
+import AlertText from './input/AlertText';
+import SuccessText from './input/SuccessText';
 
 const Wrapper = styled.form`
   width: 330px;
@@ -28,18 +30,31 @@ Form.Title = ({ children, ...rest }) => {
 };
 
 Form.Group = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   row-gap: 16px;
-  margin-bottom: 22px;
+  padding-bottom: 22px;
 
   &:last-child {
-    margin-bottom: 0px;
+    padding-bottom: 0px;
   }
 `;
 
 Form.Inputbox = Inputbox;
 
 Form.Label = Label;
+
+Form.Alert = styled(AlertText)`
+  position: absolute;
+  left: 0px;
+  bottom: 4px;
+`;
+
+Form.Success = styled(SuccessText)`
+  position: absolute;
+  left: 0px;
+  bottom: 4px;
+`;
 
 export default Form;
