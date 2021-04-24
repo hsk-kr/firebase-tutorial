@@ -12,8 +12,15 @@ const Button = styled.button`
   cursor: pointer;
   transition: opacity 0.25s;
 
-  &:hover {
-    opacity: 0.9;
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled) {
+    &:hover {
+      opacity: 0.9;
+    }
   }
 `;
 

@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const LinkButton = styled(Link)`
+const LinkButton = styled.span`
   display: block;
   font-family: 'Noto Sans', sans-serif;
   font-size: 18px;
