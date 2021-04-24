@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
-import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthProvider';
 import Background from './input/Background';
 import Button from './input/Button';
 import Label from './input/Label';
@@ -12,10 +13,16 @@ const FirstGroup = styled(Form.Group)`
 `;
 
 const SignUp = () => {
+  const { currentUser, signOut } = useAuth();
   const history = useHistory();
 
   const handleUpdateProfile = useCallback(() => {
     history.push('/update-profile');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleSignOut = useCallback(async () => {
+    await signOut();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -24,11 +31,11 @@ const SignUp = () => {
       <Form>
         <Form.Title>DASHBOARD</Form.Title>
         <FirstGroup>
-          <Label>EMAIL: test@gmail.com</Label>
+          <Label>EMAIL: {currentUser.email}</Label>
         </FirstGroup>
         <Form.Group>
           <Button onClick={handleUpdateProfile}>UPDATE PASSWORD</Button>
-          <LinkButton to="/login">Sign out</LinkButton>
+          <LinkButton onClick={handleSignOut}>Sign out</LinkButton>
         </Form.Group>
       </Form>
     </Background>
