@@ -1,7 +1,5 @@
 # Firebase Auth (with Email and Password) Example
 
-This project has been made by CRA.
-
 ## Preview
 
 <img src='https://github.com/hsk-kr/firebase-tutorial/blob/main/packages/auth-email-password/preview/preview.gif?raw=true' alt='preview' width='500' height='400' />
